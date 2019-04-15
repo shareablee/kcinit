@@ -120,6 +120,7 @@ func token(cmd *cobra.Command, args []string) {
     form.Set("subject_token_type", "urn:ietf:params:oauth:token-type:access_token")
     form.Set("requested_token_type", "urn:ietf:params:oauth:token-type:refresh_token")
     form.Set("audience", client)
+		form.Set("scope", "openid")
 
     res, err := Token().Request().Form(form).Post()
 
